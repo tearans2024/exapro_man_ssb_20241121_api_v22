@@ -1,0 +1,366 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="apmerge" targetNamespace="http://tempuri.org/apmerge.xsd" xmlns:mstns="http://tempuri.org/apmerge.xsd" xmlns="http://tempuri.org/apmerge.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="3" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="exapro_mutif_161120ConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="exapro_mutif_161120ConnectionString1 (MySettings)" PropertyReference="ApplicationSettings.sygma_solution_system.My.MySettings.GlobalReference.Default.exapro_mutif_161120ConnectionString1" Provider="CoreLab.PostgreSql.Entity" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="odbc_sygma_lokal" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="odbc_sygma_lokal (MySettings)" PropertyReference="ApplicationSettings.sygma_solution_system.My.MySettings.GlobalReference.Default.odbc_sygma_lokal" Provider="System.Data.Odbc" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="ssb_ck_20230627_20230721ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ssb_ck_20230627_20230721ConnectionString (MySettings)" PropertyReference="ApplicationSettings.sygma_solution_system.My.MySettings.GlobalReference.Default.ssb_ck_20230627_20230721ConnectionString" Provider="CoreLab.PostgreSql.Entity" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="exapro_mutif_02052021_20230721ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="exapro_mutif_02052021_20230721ConnectionString (MySettings)" PropertyReference="ApplicationSettings.sygma_solution_system.My.MySettings.GlobalReference.Default.exapro_mutif_02052021_20230721ConnectionString" Provider="CoreLab.PostgreSql.Entity" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ds_ap_merge_TableAdapter" GeneratorDataComponentClassName="ds_ap_merge_TableAdapter" Name="ds_ap_merge" UserDataComponentName="ds_ap_merge_TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="odbc_sygma_lokal (MySettings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT ap_oid,
+       ap_dom_id,
+       ap_en_id,
+       ap_add_by,
+       ap_add_date,
+       ap_upd_by,
+       ap_upd_date,
+       ap_code,
+       ap_date,
+       ap_tax_date,
+       ap_ptnr_id,
+       ap_ptnr_bk,
+       ap_ptnr_bk_acc,
+       ap_ptnr_acc_name,
+       ap_ptnr_bk_fee,
+       ap_cu_id,
+       ap_exc_rate,
+       ap_bk_id,
+       ap_credit_term,
+       ap_eff_date,
+       ap_disc_date,
+       ap_expt_date,
+       ap_ap_ac_id,
+       ap_ap_sb_id,
+       ap_ap_cc_id,
+       ap_disc_ac_id,
+       ap_disc_sb_id,
+       ap_disc_cc_id,
+       ap_pay_prepaid,
+       ap_pay_prepaid * ap_exc_rate as ap_pay_prepaid_idr,
+       ap_ac_prepaid,
+       ap_amount,
+       ap_pay_amount,
+       ap_amount - ap_pay_amount as ap_outstanding,
+       (ap_amount - ap_pay_amount) - coalesce(ap_ptnr_bk_fee, 0) as ap_total,
+       ap_amount * ap_exc_rate as ap_amount_idr,
+       ap_pay_amount * ap_exc_rate as ap_pay_amount_idr,
+       (ap_amount - ap_pay_amount) * ap_exc_rate as ap_outstanding_idr,
+       ap_remarks,
+       ap_remarks2,
+       ap_status,
+       ap_dt,
+       ap_invoice,
+       ap_due_date,
+       ap_fp_code,
+       ap_fp_date,
+       ap_trans_id,
+       ap_tax_remarks,
+       ap_tax_apr_date,
+       en_desc,
+       ptnr_name,
+       ap_ptnr_id,
+       cu_name,
+       bk_name,
+       ac_code,
+       ac_name,
+       sb_desc,
+       cc_desc,
+       cmaddr_line_1
+       cmaddr_line_2
+FROM ap_mstr
+     INNER JOIN en_mstr ON en_id = ap_en_id
+     INNER JOIN ptnr_mstr ON ptnr_id = ap_ptnr_id
+     INNER JOIN bk_mstr ON bk_id = ap_bk_id
+     INNER JOIN cu_mstr ON cu_id = ap_cu_id
+     INNER JOIN ac_mstr ON ac_id = ap_ap_ac_id
+     INNER JOIN sb_mstr ON sb_id = ap_ap_sb_id
+     INNER JOIN cc_mstr ON cc_id = ap_ap_cc_id
+     INNER JOIN cmaddr_mstr ON cmaddr_en_id = ap_en_id
+WHERE ap_amount &gt; ap_pay_amount</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ap_oid" DataSetColumn="ap_oid" />
+              <Mapping SourceColumn="ap_dom_id" DataSetColumn="ap_dom_id" />
+              <Mapping SourceColumn="ap_en_id" DataSetColumn="ap_en_id" />
+              <Mapping SourceColumn="ap_add_by" DataSetColumn="ap_add_by" />
+              <Mapping SourceColumn="ap_add_date" DataSetColumn="ap_add_date" />
+              <Mapping SourceColumn="ap_upd_by" DataSetColumn="ap_upd_by" />
+              <Mapping SourceColumn="ap_upd_date" DataSetColumn="ap_upd_date" />
+              <Mapping SourceColumn="ap_code" DataSetColumn="ap_code" />
+              <Mapping SourceColumn="ap_date" DataSetColumn="ap_date" />
+              <Mapping SourceColumn="ap_tax_date" DataSetColumn="ap_tax_date" />
+              <Mapping SourceColumn="ap_ptnr_id" DataSetColumn="ap_ptnr_id" />
+              <Mapping SourceColumn="ap_ptnr_bk" DataSetColumn="ap_ptnr_bk" />
+              <Mapping SourceColumn="ap_ptnr_acc_name" DataSetColumn="ap_ptnr_acc_name" />
+              <Mapping SourceColumn="ap_ptnr_bk_fee" DataSetColumn="ap_ptnr_bk_fee" />
+              <Mapping SourceColumn="ap_cu_id" DataSetColumn="ap_cu_id" />
+              <Mapping SourceColumn="ap_exc_rate" DataSetColumn="ap_exc_rate" />
+              <Mapping SourceColumn="ap_bk_id" DataSetColumn="ap_bk_id" />
+              <Mapping SourceColumn="ap_credit_term" DataSetColumn="ap_credit_term" />
+              <Mapping SourceColumn="ap_eff_date" DataSetColumn="ap_eff_date" />
+              <Mapping SourceColumn="ap_disc_date" DataSetColumn="ap_disc_date" />
+              <Mapping SourceColumn="ap_expt_date" DataSetColumn="ap_expt_date" />
+              <Mapping SourceColumn="ap_ap_ac_id" DataSetColumn="ap_ap_ac_id" />
+              <Mapping SourceColumn="ap_ap_sb_id" DataSetColumn="ap_ap_sb_id" />
+              <Mapping SourceColumn="ap_ap_cc_id" DataSetColumn="ap_ap_cc_id" />
+              <Mapping SourceColumn="ap_disc_ac_id" DataSetColumn="ap_disc_ac_id" />
+              <Mapping SourceColumn="ap_disc_sb_id" DataSetColumn="ap_disc_sb_id" />
+              <Mapping SourceColumn="ap_disc_cc_id" DataSetColumn="ap_disc_cc_id" />
+              <Mapping SourceColumn="ap_pay_prepaid" DataSetColumn="ap_pay_prepaid" />
+              <Mapping SourceColumn="ap_pay_prepaid_idr" DataSetColumn="ap_pay_prepaid_idr" />
+              <Mapping SourceColumn="ap_ac_prepaid" DataSetColumn="ap_ac_prepaid" />
+              <Mapping SourceColumn="ap_amount" DataSetColumn="ap_amount" />
+              <Mapping SourceColumn="ap_pay_amount" DataSetColumn="ap_pay_amount" />
+              <Mapping SourceColumn="ap_outstanding" DataSetColumn="ap_outstanding" />
+              <Mapping SourceColumn="ap_total" DataSetColumn="ap_total" />
+              <Mapping SourceColumn="ap_amount_idr" DataSetColumn="ap_amount_idr" />
+              <Mapping SourceColumn="ap_pay_amount_idr" DataSetColumn="ap_pay_amount_idr" />
+              <Mapping SourceColumn="ap_outstanding_idr" DataSetColumn="ap_outstanding_idr" />
+              <Mapping SourceColumn="ap_remarks" DataSetColumn="ap_remarks" />
+              <Mapping SourceColumn="ap_remarks2" DataSetColumn="ap_remarks2" />
+              <Mapping SourceColumn="ap_status" DataSetColumn="ap_status" />
+              <Mapping SourceColumn="ap_dt" DataSetColumn="ap_dt" />
+              <Mapping SourceColumn="ap_invoice" DataSetColumn="ap_invoice" />
+              <Mapping SourceColumn="ap_due_date" DataSetColumn="ap_due_date" />
+              <Mapping SourceColumn="ap_fp_code" DataSetColumn="ap_fp_code" />
+              <Mapping SourceColumn="ap_fp_date" DataSetColumn="ap_fp_date" />
+              <Mapping SourceColumn="ap_trans_id" DataSetColumn="ap_trans_id" />
+              <Mapping SourceColumn="ap_tax_remarks" DataSetColumn="ap_tax_remarks" />
+              <Mapping SourceColumn="ap_tax_apr_date" DataSetColumn="ap_tax_apr_date" />
+              <Mapping SourceColumn="en_desc" DataSetColumn="en_desc" />
+              <Mapping SourceColumn="ptnr_name" DataSetColumn="ptnr_name" />
+              <Mapping SourceColumn="ap_ptnr_id1" DataSetColumn="ap_ptnr_id1" />
+              <Mapping SourceColumn="cu_name" DataSetColumn="cu_name" />
+              <Mapping SourceColumn="bk_name" DataSetColumn="bk_name" />
+              <Mapping SourceColumn="ac_code" DataSetColumn="ac_code" />
+              <Mapping SourceColumn="ac_name" DataSetColumn="ac_name" />
+              <Mapping SourceColumn="sb_desc" DataSetColumn="sb_desc" />
+              <Mapping SourceColumn="cc_desc" DataSetColumn="cc_desc" />
+              <Mapping SourceColumn="cmaddr_line_2" DataSetColumn="cmaddr_line_2" />
+              <Mapping SourceColumn="ap_ptnr_bk_acc" DataSetColumn="ap_ptnr_bk_acc" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="apmerge" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="apmerge" msprop:Generator_DataSetName="apmerge" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ds_ap_merge" msprop:Generator_UserTableName="ds_ap_merge" msprop:Generator_RowDeletedName="ds_ap_mergeRowDeleted" msprop:Generator_RowChangedName="ds_ap_mergeRowChanged" msprop:Generator_RowClassName="ds_ap_mergeRow" msprop:Generator_RowChangingName="ds_ap_mergeRowChanging" msprop:Generator_RowEvArgName="ds_ap_mergeRowChangeEvent" msprop:Generator_RowEvHandlerName="ds_ap_mergeRowChangeEventHandler" msprop:Generator_TableClassName="ds_ap_mergeDataTable" msprop:Generator_TableVarName="tableds_ap_merge" msprop:Generator_RowDeletingName="ds_ap_mergeRowDeleting" msprop:Generator_TablePropName="ds_ap_merge">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ap_oid" msprop:Generator_UserColumnName="ap_oid" msprop:Generator_ColumnVarNameInTable="columnap_oid" msprop:Generator_ColumnPropNameInRow="ap_oid" msprop:Generator_ColumnPropNameInTable="ap_oidColumn" type="xs:string" />
+              <xs:element name="ap_dom_id" msprop:Generator_UserColumnName="ap_dom_id" msprop:Generator_ColumnVarNameInTable="columnap_dom_id" msprop:Generator_ColumnPropNameInRow="ap_dom_id" msprop:Generator_ColumnPropNameInTable="ap_dom_idColumn" type="xs:short" minOccurs="0" />
+              <xs:element name="ap_en_id" msprop:Generator_UserColumnName="ap_en_id" msprop:Generator_ColumnVarNameInTable="columnap_en_id" msprop:Generator_ColumnPropNameInRow="ap_en_id" msprop:Generator_ColumnPropNameInTable="ap_en_idColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ap_add_by" msprop:Generator_UserColumnName="ap_add_by" msprop:Generator_ColumnVarNameInTable="columnap_add_by" msprop:Generator_ColumnPropNameInRow="ap_add_by" msprop:Generator_ColumnPropNameInTable="ap_add_byColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ap_add_date" msprop:Generator_UserColumnName="ap_add_date" msprop:Generator_ColumnVarNameInTable="columnap_add_date" msprop:Generator_ColumnPropNameInRow="ap_add_date" msprop:Generator_ColumnPropNameInTable="ap_add_dateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ap_upd_by" msprop:Generator_UserColumnName="ap_upd_by" msprop:Generator_ColumnVarNameInTable="columnap_upd_by" msprop:Generator_ColumnPropNameInRow="ap_upd_by" msprop:Generator_ColumnPropNameInTable="ap_upd_byColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ap_upd_date" msprop:Generator_UserColumnName="ap_upd_date" msprop:Generator_ColumnVarNameInTable="columnap_upd_date" msprop:Generator_ColumnPropNameInRow="ap_upd_date" msprop:Generator_ColumnPropNameInTable="ap_upd_dateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ap_code" msprop:Generator_UserColumnName="ap_code" msprop:Generator_ColumnVarNameInTable="columnap_code" msprop:Generator_ColumnPropNameInRow="ap_code" msprop:Generator_ColumnPropNameInTable="ap_codeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ap_date" msprop:Generator_UserColumnName="ap_date" msprop:Generator_ColumnVarNameInTable="columnap_date" msprop:Generator_ColumnPropNameInRow="ap_date" msprop:Generator_ColumnPropNameInTable="ap_dateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ap_tax_date" msprop:Generator_UserColumnName="ap_tax_date" msprop:Generator_ColumnVarNameInTable="columnap_tax_date" msprop:Generator_ColumnPropNameInRow="ap_tax_date" msprop:Generator_ColumnPropNameInTable="ap_tax_dateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ap_ptnr_id" msprop:Generator_UserColumnName="ap_ptnr_id" msprop:Generator_ColumnVarNameInTable="columnap_ptnr_id" msprop:Generator_ColumnPropNameInRow="ap_ptnr_id" msprop:Generator_ColumnPropNameInTable="ap_ptnr_idColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ap_ptnr_bk" msprop:Generator_UserColumnName="ap_ptnr_bk" msprop:Generator_ColumnVarNameInTable="columnap_ptnr_bk" msprop:Generator_ColumnPropNameInRow="ap_ptnr_bk" msprop:Generator_ColumnPropNameInTable="ap_ptnr_bkColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ap_ptnr_bk_acc" msprop:Generator_UserColumnName="ap_ptnr_bk_acc" msprop:Generator_ColumnVarNameInTable="columnap_ptnr_bk_acc" msprop:Generator_ColumnPropNameInRow="ap_ptnr_bk_acc" msprop:Generator_ColumnPropNameInTable="ap_ptnr_bk_accColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ap_ptnr_acc_name" msprop:Generator_UserColumnName="ap_ptnr_acc_name" msprop:Generator_ColumnVarNameInTable="columnap_ptnr_acc_name" msprop:Generator_ColumnPropNameInRow="ap_ptnr_acc_name" msprop:Generator_ColumnPropNameInTable="ap_ptnr_acc_nameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ap_ptnr_bk_fee" msprop:Generator_UserColumnName="ap_ptnr_bk_fee" msprop:Generator_ColumnVarNameInTable="columnap_ptnr_bk_fee" msprop:Generator_ColumnPropNameInRow="ap_ptnr_bk_fee" msprop:Generator_ColumnPropNameInTable="ap_ptnr_bk_feeColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ap_cu_id" msprop:Generator_UserColumnName="ap_cu_id" msprop:Generator_ColumnVarNameInTable="columnap_cu_id" msprop:Generator_ColumnPropNameInRow="ap_cu_id" msprop:Generator_ColumnPropNameInTable="ap_cu_idColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ap_exc_rate" msprop:Generator_UserColumnName="ap_exc_rate" msprop:Generator_ColumnVarNameInTable="columnap_exc_rate" msprop:Generator_ColumnPropNameInRow="ap_exc_rate" msprop:Generator_ColumnPropNameInTable="ap_exc_rateColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ap_bk_id" msprop:Generator_UserColumnName="ap_bk_id" msprop:Generator_ColumnVarNameInTable="columnap_bk_id" msprop:Generator_ColumnPropNameInRow="ap_bk_id" msprop:Generator_ColumnPropNameInTable="ap_bk_idColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ap_credit_term" msprop:Generator_UserColumnName="ap_credit_term" msprop:Generator_ColumnVarNameInTable="columnap_credit_term" msprop:Generator_ColumnPropNameInRow="ap_credit_term" msprop:Generator_ColumnPropNameInTable="ap_credit_termColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ap_eff_date" msprop:Generator_UserColumnName="ap_eff_date" msprop:Generator_ColumnVarNameInTable="columnap_eff_date" msprop:Generator_ColumnPropNameInRow="ap_eff_date" msprop:Generator_ColumnPropNameInTable="ap_eff_dateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ap_disc_date" msprop:Generator_UserColumnName="ap_disc_date" msprop:Generator_ColumnVarNameInTable="columnap_disc_date" msprop:Generator_ColumnPropNameInRow="ap_disc_date" msprop:Generator_ColumnPropNameInTable="ap_disc_dateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ap_expt_date" msprop:Generator_UserColumnName="ap_expt_date" msprop:Generator_ColumnVarNameInTable="columnap_expt_date" msprop:Generator_ColumnPropNameInRow="ap_expt_date" msprop:Generator_ColumnPropNameInTable="ap_expt_dateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ap_ap_ac_id" msprop:Generator_UserColumnName="ap_ap_ac_id" msprop:Generator_ColumnVarNameInTable="columnap_ap_ac_id" msprop:Generator_ColumnPropNameInRow="ap_ap_ac_id" msprop:Generator_ColumnPropNameInTable="ap_ap_ac_idColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ap_ap_sb_id" msprop:Generator_UserColumnName="ap_ap_sb_id" msprop:Generator_ColumnVarNameInTable="columnap_ap_sb_id" msprop:Generator_ColumnPropNameInRow="ap_ap_sb_id" msprop:Generator_ColumnPropNameInTable="ap_ap_sb_idColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ap_ap_cc_id" msprop:Generator_UserColumnName="ap_ap_cc_id" msprop:Generator_ColumnVarNameInTable="columnap_ap_cc_id" msprop:Generator_ColumnPropNameInRow="ap_ap_cc_id" msprop:Generator_ColumnPropNameInTable="ap_ap_cc_idColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ap_disc_ac_id" msprop:Generator_UserColumnName="ap_disc_ac_id" msprop:Generator_ColumnVarNameInTable="columnap_disc_ac_id" msprop:Generator_ColumnPropNameInRow="ap_disc_ac_id" msprop:Generator_ColumnPropNameInTable="ap_disc_ac_idColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ap_disc_sb_id" msprop:Generator_UserColumnName="ap_disc_sb_id" msprop:Generator_ColumnVarNameInTable="columnap_disc_sb_id" msprop:Generator_ColumnPropNameInRow="ap_disc_sb_id" msprop:Generator_ColumnPropNameInTable="ap_disc_sb_idColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ap_disc_cc_id" msprop:Generator_UserColumnName="ap_disc_cc_id" msprop:Generator_ColumnVarNameInTable="columnap_disc_cc_id" msprop:Generator_ColumnPropNameInRow="ap_disc_cc_id" msprop:Generator_ColumnPropNameInTable="ap_disc_cc_idColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ap_pay_prepaid" msprop:Generator_UserColumnName="ap_pay_prepaid" msprop:Generator_ColumnVarNameInTable="columnap_pay_prepaid" msprop:Generator_ColumnPropNameInRow="ap_pay_prepaid" msprop:Generator_ColumnPropNameInTable="ap_pay_prepaidColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ap_pay_prepaid_idr" msdata:ReadOnly="true" msprop:Generator_UserColumnName="ap_pay_prepaid_idr" msprop:Generator_ColumnVarNameInTable="columnap_pay_prepaid_idr" msprop:Generator_ColumnPropNameInRow="ap_pay_prepaid_idr" msprop:Generator_ColumnPropNameInTable="ap_pay_prepaid_idrColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ap_ac_prepaid" msprop:Generator_UserColumnName="ap_ac_prepaid" msprop:Generator_ColumnVarNameInTable="columnap_ac_prepaid" msprop:Generator_ColumnPropNameInRow="ap_ac_prepaid" msprop:Generator_ColumnPropNameInTable="ap_ac_prepaidColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ap_amount" msprop:Generator_UserColumnName="ap_amount" msprop:Generator_ColumnVarNameInTable="columnap_amount" msprop:Generator_ColumnPropNameInRow="ap_amount" msprop:Generator_ColumnPropNameInTable="ap_amountColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ap_pay_amount" msprop:Generator_UserColumnName="ap_pay_amount" msprop:Generator_ColumnVarNameInTable="columnap_pay_amount" msprop:Generator_ColumnPropNameInRow="ap_pay_amount" msprop:Generator_ColumnPropNameInTable="ap_pay_amountColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ap_outstanding" msdata:ReadOnly="true" msprop:Generator_UserColumnName="ap_outstanding" msprop:Generator_ColumnVarNameInTable="columnap_outstanding" msprop:Generator_ColumnPropNameInRow="ap_outstanding" msprop:Generator_ColumnPropNameInTable="ap_outstandingColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ap_total" msdata:ReadOnly="true" msprop:Generator_UserColumnName="ap_total" msprop:Generator_ColumnVarNameInTable="columnap_total" msprop:Generator_ColumnPropNameInRow="ap_total" msprop:Generator_ColumnPropNameInTable="ap_totalColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ap_amount_idr" msdata:ReadOnly="true" msprop:Generator_UserColumnName="ap_amount_idr" msprop:Generator_ColumnVarNameInTable="columnap_amount_idr" msprop:Generator_ColumnPropNameInRow="ap_amount_idr" msprop:Generator_ColumnPropNameInTable="ap_amount_idrColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ap_pay_amount_idr" msdata:ReadOnly="true" msprop:Generator_UserColumnName="ap_pay_amount_idr" msprop:Generator_ColumnVarNameInTable="columnap_pay_amount_idr" msprop:Generator_ColumnPropNameInRow="ap_pay_amount_idr" msprop:Generator_ColumnPropNameInTable="ap_pay_amount_idrColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ap_outstanding_idr" msdata:ReadOnly="true" msprop:Generator_UserColumnName="ap_outstanding_idr" msprop:Generator_ColumnVarNameInTable="columnap_outstanding_idr" msprop:Generator_ColumnPropNameInRow="ap_outstanding_idr" msprop:Generator_ColumnPropNameInTable="ap_outstanding_idrColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ap_remarks" msprop:Generator_UserColumnName="ap_remarks" msprop:Generator_ColumnVarNameInTable="columnap_remarks" msprop:Generator_ColumnPropNameInRow="ap_remarks" msprop:Generator_ColumnPropNameInTable="ap_remarksColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ap_remarks2" msprop:Generator_UserColumnName="ap_remarks2" msprop:Generator_ColumnVarNameInTable="columnap_remarks2" msprop:Generator_ColumnPropNameInRow="ap_remarks2" msprop:Generator_ColumnPropNameInTable="ap_remarks2Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ap_status" msprop:Generator_UserColumnName="ap_status" msprop:Generator_ColumnVarNameInTable="columnap_status" msprop:Generator_ColumnPropNameInRow="ap_status" msprop:Generator_ColumnPropNameInTable="ap_statusColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ap_dt" msprop:Generator_UserColumnName="ap_dt" msprop:Generator_ColumnVarNameInTable="columnap_dt" msprop:Generator_ColumnPropNameInRow="ap_dt" msprop:Generator_ColumnPropNameInTable="ap_dtColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ap_invoice" msprop:Generator_UserColumnName="ap_invoice" msprop:Generator_ColumnVarNameInTable="columnap_invoice" msprop:Generator_ColumnPropNameInRow="ap_invoice" msprop:Generator_ColumnPropNameInTable="ap_invoiceColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ap_due_date" msprop:Generator_UserColumnName="ap_due_date" msprop:Generator_ColumnVarNameInTable="columnap_due_date" msprop:Generator_ColumnPropNameInRow="ap_due_date" msprop:Generator_ColumnPropNameInTable="ap_due_dateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ap_fp_code" msprop:Generator_UserColumnName="ap_fp_code" msprop:Generator_ColumnVarNameInTable="columnap_fp_code" msprop:Generator_ColumnPropNameInRow="ap_fp_code" msprop:Generator_ColumnPropNameInTable="ap_fp_codeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ap_fp_date" msprop:Generator_UserColumnName="ap_fp_date" msprop:Generator_ColumnVarNameInTable="columnap_fp_date" msprop:Generator_ColumnPropNameInRow="ap_fp_date" msprop:Generator_ColumnPropNameInTable="ap_fp_dateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ap_trans_id" msprop:Generator_UserColumnName="ap_trans_id" msprop:Generator_ColumnVarNameInTable="columnap_trans_id" msprop:Generator_ColumnPropNameInRow="ap_trans_id" msprop:Generator_ColumnPropNameInTable="ap_trans_idColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ap_tax_remarks" msprop:Generator_UserColumnName="ap_tax_remarks" msprop:Generator_ColumnVarNameInTable="columnap_tax_remarks" msprop:Generator_ColumnPropNameInRow="ap_tax_remarks" msprop:Generator_ColumnPropNameInTable="ap_tax_remarksColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ap_tax_apr_date" msprop:Generator_UserColumnName="ap_tax_apr_date" msprop:Generator_ColumnVarNameInTable="columnap_tax_apr_date" msprop:Generator_ColumnPropNameInRow="ap_tax_apr_date" msprop:Generator_ColumnPropNameInTable="ap_tax_apr_dateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="en_desc" msprop:Generator_UserColumnName="en_desc" msprop:Generator_ColumnVarNameInTable="columnen_desc" msprop:Generator_ColumnPropNameInRow="en_desc" msprop:Generator_ColumnPropNameInTable="en_descColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ptnr_name" msprop:Generator_UserColumnName="ptnr_name" msprop:Generator_ColumnVarNameInTable="columnptnr_name" msprop:Generator_ColumnPropNameInRow="ptnr_name" msprop:Generator_ColumnPropNameInTable="ptnr_nameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ap_ptnr_id1" msprop:Generator_UserColumnName="ap_ptnr_id1" msprop:Generator_ColumnVarNameInTable="columnap_ptnr_id1" msprop:Generator_ColumnPropNameInRow="ap_ptnr_id1" msprop:Generator_ColumnPropNameInTable="ap_ptnr_id1Column" type="xs:int" minOccurs="0" />
+              <xs:element name="cu_name" msprop:Generator_UserColumnName="cu_name" msprop:Generator_ColumnVarNameInTable="columncu_name" msprop:Generator_ColumnPropNameInRow="cu_name" msprop:Generator_ColumnPropNameInTable="cu_nameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="bk_name" msprop:Generator_UserColumnName="bk_name" msprop:Generator_ColumnVarNameInTable="columnbk_name" msprop:Generator_ColumnPropNameInRow="bk_name" msprop:Generator_ColumnPropNameInTable="bk_nameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ac_code" msprop:Generator_UserColumnName="ac_code" msprop:Generator_ColumnVarNameInTable="columnac_code" msprop:Generator_ColumnPropNameInRow="ac_code" msprop:Generator_ColumnPropNameInTable="ac_codeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ac_name" msprop:Generator_UserColumnName="ac_name" msprop:Generator_ColumnVarNameInTable="columnac_name" msprop:Generator_ColumnPropNameInRow="ac_name" msprop:Generator_ColumnPropNameInTable="ac_nameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sb_desc" msprop:Generator_UserColumnName="sb_desc" msprop:Generator_ColumnVarNameInTable="columnsb_desc" msprop:Generator_ColumnPropNameInRow="sb_desc" msprop:Generator_ColumnPropNameInTable="sb_descColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cc_desc" msprop:Generator_UserColumnName="cc_desc" msprop:Generator_ColumnVarNameInTable="columncc_desc" msprop:Generator_ColumnPropNameInRow="cc_desc" msprop:Generator_ColumnPropNameInTable="cc_descColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cmaddr_line_2" msprop:Generator_UserColumnName="cmaddr_line_2" msprop:Generator_ColumnVarNameInTable="columncmaddr_line_2" msprop:Generator_ColumnPropNameInRow="cmaddr_line_2" msprop:Generator_ColumnPropNameInTable="cmaddr_line_2Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ds_ap_merge" />
+      <xs:field xpath="mstns:ap_oid" />
+    </xs:unique>
+    <xs:unique name="Constraint2">
+      <xs:selector xpath=".//mstns:ds_ap_merge" />
+      <xs:field xpath="mstns:ac_code" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

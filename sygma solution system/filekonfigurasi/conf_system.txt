@@ -1,0 +1,16 @@
+﻿user_default=sygma;
+pass_default=bangkawarah;
+report_path=D:\setting report syspro;
+exc_rate_reff=http://www.ortax.org/ortax/?mod=kursbi&search=;
+xmpp_on=0;
+
+email_server_name=mail.sygmacorp.com;
+email_user_name=syspro@sygmacorp.com;
+email_port=587;
+email_ssl=0;
+email_cc=syspromail@sygmacorp.com;
+stop_inv=23:59;
+
+url_api=http://103.148.192.217:5002/api/api; http://103.67.79.219:5000/api/api; http://103.67.79.219:5000/api/api;  http://localhost:5000/api/api; http://103.67.79.219:5002/api/api; http://103.148.192.217:5002/api/api; http://localhost:5000/api/api;  
+dbname=ssb_mnj_20230911_uplink; exapro_mutif_02052021_2_20241101_113446; exapro_mutif_02052021; sb_sss_20230911_uplink_20241101_113446;  ssb_sss_20230911_uplink; sssb_sss_20230911_uplink_20241024; exapro_mutif_test; _20241019; ssb_sss_20230911_uplink_20241018; ssb_sss_20230911_uplink_dev; ssb_ksm_20230911_uplink; ssb_sss_20230911_uplink_20241003_145613; ssb_ksm_20230911_uplink_20240930_004645;
+server=192.168.100.15; 203.175.10.171; localhost; 103.67.79.219; 192.168.100.15; 203.175.10.171; 192.168.100.15; 

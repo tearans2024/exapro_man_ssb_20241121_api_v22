@@ -1,0 +1,12 @@
+ALTER TABLE "public"."ti_mstr"
+  ADD COLUMN "ti_cu_id" INTEGER;
+
+ALTER TABLE "public"."ti_mstr"
+  ADD CONSTRAINT "otm_ti_cu" FOREIGN KEY ("ti_cu_id")
+    REFERENCES "public"."cu_mstr"("cu_id")
+    ON DELETE RESTRICT
+    ON UPDATE RESTRICT
+    NOT DEFERRABLE;
+
+ALTER TABLE "public"."tip_pt"
+  ADD COLUMN "tip_exc_rate" NUMERIC(26,8);

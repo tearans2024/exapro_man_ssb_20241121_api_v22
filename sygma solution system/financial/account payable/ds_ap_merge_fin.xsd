@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ds_ap_merge_fin" targetNamespace="http://tempuri.org/ds_ap_merge_fin.xsd" xmlns:mstns="http://tempuri.org/ds_ap_merge_fin.xsd" xmlns="http://tempuri.org/ds_ap_merge_fin.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="2" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="ssb_ksm_20230911_20231017ConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="ssb_ksm_20230911_20231017ConnectionString (MySettings)" PropertyReference="ApplicationSettings.sygma_solution_system.My.MySettings.GlobalReference.Default.ssb_ksm_20230911_20231017ConnectionString" Provider="CoreLab.PostgreSql.Entity" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (MySettings)" PropertyReference="ApplicationSettings.sygma_solution_system.My.MySettings.GlobalReference.Default.ConnectionString" Provider="System.Data.Odbc" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="odbc_sygma_lokal" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="odbc_sygma_lokal (MySettings)" PropertyReference="ApplicationSettings.sygma_solution_system.My.MySettings.GlobalReference.Default.odbc_sygma_lokal" Provider="System.Data.Odbc" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ds_ap_merge_finTableAdapter" GeneratorDataComponentClassName="ds_ap_merge_finTableAdapter" Name="ds_ap_merge_fin" UserDataComponentName="ds_ap_merge_finTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="odbc_sygma_lokal (MySettings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT app_en_id,</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="app_en_id" DataSetColumn="app_en_id" />
+              <Mapping SourceColumn="en_desc" DataSetColumn="en_desc" />
+              <Mapping SourceColumn="app_code" DataSetColumn="app_code" />
+              <Mapping SourceColumn="app_date" DataSetColumn="app_date" />
+              <Mapping SourceColumn="app_remarks" DataSetColumn="app_remarks" />
+              <Mapping SourceColumn="appd_seq" DataSetColumn="appd_seq" />
+              <Mapping SourceColumn="appd_ap_code" DataSetColumn="appd_ap_code" />
+              <Mapping SourceColumn="appd_duedate_pay" DataSetColumn="appd_duedate_pay" />
+              <Mapping SourceColumn="appd_ptnr_id" DataSetColumn="appd_ptnr_id" />
+              <Mapping SourceColumn="ptnr_name" DataSetColumn="ptnr_name" />
+              <Mapping SourceColumn="appd_ptnr_bank" DataSetColumn="appd_ptnr_bank" />
+              <Mapping SourceColumn="appd_ptnr_no_rek" DataSetColumn="appd_ptnr_no_rek" />
+              <Mapping SourceColumn="appd_ptnr_rek_name" DataSetColumn="appd_ptnr_rek_name" />
+              <Mapping SourceColumn="appd_ap_date" DataSetColumn="appd_ap_date" />
+              <Mapping SourceColumn="appd_ap_amount" DataSetColumn="appd_ap_amount" />
+              <Mapping SourceColumn="appd_ap_due_date" DataSetColumn="appd_ap_due_date" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ds_ap_merge_fin" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ds_ap_merge_fin" msprop:Generator_DataSetName="ds_ap_merge_fin" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ds_ap_merge_fin" msprop:Generator_UserTableName="ds_ap_merge_fin" msprop:Generator_RowDeletedName="ds_ap_merge_finRowDeleted" msprop:Generator_RowChangedName="ds_ap_merge_finRowChanged" msprop:Generator_RowClassName="ds_ap_merge_finRow" msprop:Generator_RowChangingName="ds_ap_merge_finRowChanging" msprop:Generator_RowEvArgName="ds_ap_merge_finRowChangeEvent" msprop:Generator_RowEvHandlerName="ds_ap_merge_finRowChangeEventHandler" msprop:Generator_TableClassName="ds_ap_merge_finDataTable" msprop:Generator_TableVarName="tableds_ap_merge_fin" msprop:Generator_RowDeletingName="ds_ap_merge_finRowDeleting" msprop:Generator_TablePropName="_ds_ap_merge_fin">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="app_en_id" msprop:Generator_UserColumnName="app_en_id" msprop:Generator_ColumnVarNameInTable="columnapp_en_id" msprop:Generator_ColumnPropNameInRow="app_en_id" msprop:Generator_ColumnPropNameInTable="app_en_idColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="en_desc" msprop:Generator_UserColumnName="en_desc" msprop:Generator_ColumnVarNameInTable="columnen_desc" msprop:Generator_ColumnPropNameInRow="en_desc" msprop:Generator_ColumnPropNameInTable="en_descColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="app_code" msprop:Generator_UserColumnName="app_code" msprop:Generator_ColumnVarNameInTable="columnapp_code" msprop:Generator_ColumnPropNameInRow="app_code" msprop:Generator_ColumnPropNameInTable="app_codeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="app_date" msprop:Generator_UserColumnName="app_date" msprop:Generator_ColumnVarNameInTable="columnapp_date" msprop:Generator_ColumnPropNameInRow="app_date" msprop:Generator_ColumnPropNameInTable="app_dateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="app_remarks" msprop:Generator_UserColumnName="app_remarks" msprop:Generator_ColumnVarNameInTable="columnapp_remarks" msprop:Generator_ColumnPropNameInRow="app_remarks" msprop:Generator_ColumnPropNameInTable="app_remarksColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="90" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="appd_seq" msprop:Generator_UserColumnName="appd_seq" msprop:Generator_ColumnVarNameInTable="columnappd_seq" msprop:Generator_ColumnPropNameInRow="appd_seq" msprop:Generator_ColumnPropNameInTable="appd_seqColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="appd_ap_code" msprop:Generator_UserColumnName="appd_ap_code" msprop:Generator_ColumnVarNameInTable="columnappd_ap_code" msprop:Generator_ColumnPropNameInRow="appd_ap_code" msprop:Generator_ColumnPropNameInTable="appd_ap_codeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="appd_duedate_pay" msprop:Generator_UserColumnName="appd_duedate_pay" msprop:Generator_ColumnVarNameInTable="columnappd_duedate_pay" msprop:Generator_ColumnPropNameInRow="appd_duedate_pay" msprop:Generator_ColumnPropNameInTable="appd_duedate_payColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="appd_ptnr_id" msprop:Generator_UserColumnName="appd_ptnr_id" msprop:Generator_ColumnVarNameInTable="columnappd_ptnr_id" msprop:Generator_ColumnPropNameInRow="appd_ptnr_id" msprop:Generator_ColumnPropNameInTable="appd_ptnr_idColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ptnr_name" msprop:Generator_UserColumnName="ptnr_name" msprop:Generator_ColumnVarNameInTable="columnptnr_name" msprop:Generator_ColumnPropNameInRow="ptnr_name" msprop:Generator_ColumnPropNameInTable="ptnr_nameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="appd_ptnr_bank" msprop:Generator_UserColumnName="appd_ptnr_bank" msprop:Generator_ColumnVarNameInTable="columnappd_ptnr_bank" msprop:Generator_ColumnPropNameInRow="appd_ptnr_bank" msprop:Generator_ColumnPropNameInTable="appd_ptnr_bankColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="64" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="appd_ptnr_no_rek" msprop:Generator_UserColumnName="appd_ptnr_no_rek" msprop:Generator_ColumnVarNameInTable="columnappd_ptnr_no_rek" msprop:Generator_ColumnPropNameInRow="appd_ptnr_no_rek" msprop:Generator_ColumnPropNameInTable="appd_ptnr_no_rekColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="appd_ptnr_rek_name" msprop:Generator_UserColumnName="appd_ptnr_rek_name" msprop:Generator_ColumnVarNameInTable="columnappd_ptnr_rek_name" msprop:Generator_ColumnPropNameInRow="appd_ptnr_rek_name" msprop:Generator_ColumnPropNameInTable="appd_ptnr_rek_nameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="64" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="appd_ap_date" msprop:Generator_UserColumnName="appd_ap_date" msprop:Generator_ColumnVarNameInTable="columnappd_ap_date" msprop:Generator_ColumnPropNameInRow="appd_ap_date" msprop:Generator_ColumnPropNameInTable="appd_ap_dateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="appd_ap_amount" msprop:Generator_UserColumnName="appd_ap_amount" msprop:Generator_ColumnVarNameInTable="columnappd_ap_amount" msprop:Generator_ColumnPropNameInRow="appd_ap_amount" msprop:Generator_ColumnPropNameInTable="appd_ap_amountColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="appd_ap_due_date" msprop:Generator_UserColumnName="appd_ap_due_date" msprop:Generator_ColumnVarNameInTable="columnappd_ap_due_date" msprop:Generator_ColumnPropNameInRow="appd_ap_due_date" msprop:Generator_ColumnPropNameInTable="appd_ap_due_dateColumn" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

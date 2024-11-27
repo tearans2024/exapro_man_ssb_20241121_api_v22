@@ -1,0 +1,158 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="odbc_sygma_lokal" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Dsn=syspro&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.Odbc&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Dsn=syspro</Value>
+    </Setting>
+    <Setting Name="ConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Dsn=exapro&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.Odbc&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Dsn=exapro</Value>
+    </Setting>
+    <Setting Name="exapro_mutif_161120ConnectionString1" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;User Id=postgres;Host=RANA-HP14BF0001;Database=exapro_mutif_161120;Schema=public&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;CoreLab.PostgreSql.Entity&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">User Id=postgres;Host=RANA-HP14BF0001;Database=exapro_mutif_161120;Schema=public</Value>
+    </Setting>
+    <Setting Name="exapro_mutif_20210111ConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;User Id=postgres;Host=localhost;Database=exapro_mutif_20210111;Persist Security Info=True;Schema=public&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;CoreLab.PostgreSql.Entity&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">User Id=postgres;Host=localhost;Database=exapro_mutif_20210111;Persist Security Info=True;Schema=public</Value>
+    </Setting>
+    <Setting Name="exapro_mutif_02052021ConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;User Id=postgres;Host=localhost;Database=exapro_mutif_02052021;Schema=public&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;CoreLab.PostgreSql.Entity&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">User Id=postgres;Host=localhost;Database=exapro_mutif_02052021;Schema=public</Value>
+    </Setting>
+    <Setting Name="exapro_mutif_20210730ConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;User Id=postgres;Host=localhost;Database=exapro_mutif_20210730;Persist Security Info=True;Schema=public&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;CoreLab.PostgreSql.Entity&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">User Id=postgres;Host=localhost;Database=exapro_mutif_20210730;Persist Security Info=True;Schema=public</Value>
+    </Setting>
+    <Setting Name="exapro_mutif_20210812ConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;User Id=postgres;Host=localhost;Database=exapro_mutif_20210812;Persist Security Info=True;Schema=public&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;CoreLab.PostgreSql.Entity&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">User Id=postgres;Host=localhost;Database=exapro_mutif_20210812;Persist Security Info=True;Schema=public</Value>
+    </Setting>
+    <Setting Name="exapro_mutif_20210830ConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;User Id=postgres;Host=localhost;Database=exapro_mutif_20210830;Persist Security Info=True;Schema=public&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;CoreLab.PostgreSql.Entity&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">User Id=postgres;Host=localhost;Database=exapro_mutif_20210830;Persist Security Info=True;Schema=public</Value>
+    </Setting>
+    <Setting Name="exapro_mutif_20210903ConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;User Id=postgres;Password=bangkar;Host=localhost;Database=exapro_mutif_20210903;Persist Security Info=True;Schema=public&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;CoreLab.PostgreSql.Entity&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">User Id=postgres;Password=bangkar;Host=localhost;Database=exapro_mutif_20210903;Persist Security Info=True;Schema=public</Value>
+    </Setting>
+    <Setting Name="exapro_mutif_20210905ConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;User Id=postgres;Password=bangkar;Host=localhost;Database=exapro_mutif_20210905;Schema=public&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;CoreLab.PostgreSql.Entity&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">User Id=postgres;Password=bangkar;Host=localhost;Database=exapro_mutif_20210905;Schema=public</Value>
+    </Setting>
+    <Setting Name="exapro_mutif_20210906ConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;User Id=postgres;Password=bangkar;Host=localhost;Database=exapro_mutif_20210906;Persist Security Info=True;Schema=public&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;CoreLab.PostgreSql.Entity&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">User Id=postgres;Password=bangkar;Host=localhost;Database=exapro_mutif_20210906;Persist Security Info=True;Schema=public</Value>
+    </Setting>
+    <Setting Name="exapro_mutif_02052021ConnectionString1" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;User Id=postgres;Host=localhost;Database=exapro_mutif_02052021;Persist Security Info=True;Schema=public&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;CoreLab.PostgreSql.Entity&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">User Id=postgres;Host=localhost;Database=exapro_mutif_02052021;Persist Security Info=True;Schema=public</Value>
+    </Setting>
+    <Setting Name="ssb_ck_20230627_20230721ConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;User Id=postgres;Host=localhost;Database=ssb_ck_20230627_20230721;Schema=public&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;CoreLab.PostgreSql.Entity&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">User Id=postgres;Host=localhost;Database=ssb_ck_20230627_20230721;Schema=public</Value>
+    </Setting>
+    <Setting Name="exapro_mutif_02052021_20230721ConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;User Id=postgres;Host=localhost;Database=exapro_mutif_02052021_20230721;Schema=public&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;CoreLab.PostgreSql.Entity&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">User Id=postgres;Host=localhost;Database=exapro_mutif_02052021_20230721;Schema=public</Value>
+    </Setting>
+    <Setting Name="exapro_mutif_02052021_20230825ConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;User Id=postgres;Host=localhost;Database=exapro_mutif_02052021_20230825;Schema=public&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;CoreLab.PostgreSql.Entity&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">User Id=postgres;Host=localhost;Database=exapro_mutif_02052021_20230825;Schema=public</Value>
+    </Setting>
+    <Setting Name="sygma_cmds_20121028ConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;User Id=postgres;Password=bangkar;Host=localhost;Database=sygma_cmds_20121028;Persist Security Info=True;Schema=public&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;CoreLab.PostgreSql.Entity&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">User Id=postgres;Password=bangkar;Host=localhost;Database=sygma_cmds_20121028;Persist Security Info=True;Schema=public</Value>
+    </Setting>
+    <Setting Name="ssb_sss_20230911_20240711_uplinkConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;User Id=postgres;Host=localhost;Database=ssb_sss_20230911_20240711_uplink&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;CoreLab.PostgreSql.Entity&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">User Id=postgres;Host=localhost;Database=ssb_sss_20230911_20240711_uplink</Value>
+    </Setting>
+    <Setting Name="ssb_ksm_20230911_uplink_20240723ConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;User Id=postgres;Host=localhost;Database=ssb_ksm_20230911_uplink_20240723;Initial Schema=public&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;Devart.Data.PostgreSql&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">User Id=postgres;Host=localhost;Database=ssb_ksm_20230911_uplink_20240723;Initial Schema=public</Value>
+    </Setting>
+    <Setting Name="ssb_ksm_20230911_uplink_20240723ConnectionString1" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;User Id=postgres;Host=LOCALHOST;Database=ssb_ksm_20230911_uplink_20240723;Initial Schema=public&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;Devart.Data.PostgreSql&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">User Id=postgres;Host=LOCALHOST;Database=ssb_ksm_20230911_uplink_20240723;Initial Schema=public</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Ds_kartustok" targetNamespace="http://tempuri.org/Ds_kartustok.xsd" xmlns:mstns="http://tempuri.org/Ds_kartustok.xsd" xmlns="http://tempuri.org/Ds_kartustok.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Ds_kartustok" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="Ds_kartustok" msprop:Generator_DataSetName="Ds_kartustok">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Table" msprop:Generator_UserTableName="Table" msprop:Generator_RowDeletedName="TableRowDeleted" msprop:Generator_TableClassName="TableDataTable" msprop:Generator_RowChangedName="TableRowChanged" msprop:Generator_RowClassName="TableRow" msprop:Generator_RowChangingName="TableRowChanging" msprop:Generator_RowEvArgName="TableRowChangeEvent" msprop:Generator_RowEvHandlerName="TableRowChangeEventHandler" msprop:Generator_TablePropName="Table" msprop:Generator_TableVarName="tableTable" msprop:Generator_RowDeletingName="TableRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="invh_oid" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msdata:ReadOnly="true" msprop:Generator_UserColumnName="invh_oid" msprop:Generator_ColumnPropNameInRow="invh_oid" msprop:Generator_ColumnVarNameInTable="columninvh_oid" msprop:Generator_ColumnPropNameInTable="invh_oidColumn" type="xs:string" />
+              <xs:element name="en_desc" msdata:ReadOnly="true" msprop:Generator_UserColumnName="en_desc" msprop:Generator_ColumnPropNameInRow="en_desc" msprop:Generator_ColumnVarNameInTable="columnen_desc" msprop:Generator_ColumnPropNameInTable="en_descColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="invh_date" msdata:ReadOnly="true" msprop:Generator_UserColumnName="invh_date" msprop:Generator_ColumnPropNameInRow="invh_date" msprop:Generator_ColumnVarNameInTable="columninvh_date" msprop:Generator_ColumnPropNameInTable="invh_dateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="invh_desc" msdata:ReadOnly="true" msprop:Generator_UserColumnName="invh_desc" msprop:Generator_ColumnPropNameInRow="invh_desc" msprop:Generator_ColumnVarNameInTable="columninvh_desc" msprop:Generator_ColumnPropNameInTable="invh_descColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="si_desc" msdata:ReadOnly="true" msprop:Generator_UserColumnName="si_desc" msprop:Generator_ColumnPropNameInRow="si_desc" msprop:Generator_ColumnVarNameInTable="columnsi_desc" msprop:Generator_ColumnPropNameInTable="si_descColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="loc_desc" msdata:ReadOnly="true" msprop:Generator_UserColumnName="loc_desc" msprop:Generator_ColumnPropNameInRow="loc_desc" msprop:Generator_ColumnVarNameInTable="columnloc_desc" msprop:Generator_ColumnPropNameInTable="loc_descColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="pt_code" msdata:ReadOnly="true" msprop:Generator_UserColumnName="pt_code" msprop:Generator_ColumnPropNameInRow="pt_code" msprop:Generator_ColumnVarNameInTable="columnpt_code" msprop:Generator_ColumnPropNameInTable="pt_codeColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="pt_desc1" msdata:ReadOnly="true" msprop:Generator_UserColumnName="pt_desc1" msprop:Generator_ColumnPropNameInRow="pt_desc1" msprop:Generator_ColumnVarNameInTable="columnpt_desc1" msprop:Generator_ColumnPropNameInTable="pt_desc1Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="pt_desc2" msdata:ReadOnly="true" msprop:Generator_UserColumnName="pt_desc2" msprop:Generator_ColumnPropNameInRow="pt_desc2" msprop:Generator_ColumnVarNameInTable="columnpt_desc2" msprop:Generator_ColumnPropNameInTable="pt_desc2Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dt_timestamp" msdata:ReadOnly="true" msprop:Generator_UserColumnName="dt_timestamp" msprop:Generator_ColumnPropNameInRow="dt_timestamp" msprop:Generator_ColumnVarNameInTable="columndt_timestamp" msprop:Generator_ColumnPropNameInTable="dt_timestampColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="invh_trn_code" msdata:ReadOnly="true" msprop:Generator_UserColumnName="invh_trn_code" msprop:Generator_ColumnPropNameInRow="invh_trn_code" msprop:Generator_ColumnVarNameInTable="columninvh_trn_code" msprop:Generator_ColumnPropNameInTable="invh_trn_codeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="invh_qty" msdata:ReadOnly="true" msprop:Generator_UserColumnName="invh_qty" msprop:Generator_ColumnPropNameInRow="invh_qty" msprop:Generator_ColumnVarNameInTable="columninvh_qty" msprop:Generator_ColumnPropNameInTable="invh_qtyColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="invh_qty_old" msdata:ReadOnly="true" msprop:Generator_UserColumnName="invh_qty_old" msprop:Generator_ColumnPropNameInRow="invh_qty_old" msprop:Generator_ColumnVarNameInTable="columninvh_qty_old" msprop:Generator_ColumnPropNameInTable="invh_qty_oldColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="awal" msdata:ReadOnly="true" msprop:Generator_UserColumnName="awal" msprop:Generator_ColumnPropNameInRow="awal" msprop:Generator_ColumnVarNameInTable="columnawal" msprop:Generator_ColumnPropNameInTable="awalColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="keluar" msdata:ReadOnly="true" msprop:Generator_UserColumnName="keluar" msprop:Generator_ColumnPropNameInRow="keluar" msprop:Generator_ColumnVarNameInTable="columnkeluar" msprop:Generator_ColumnPropNameInTable="keluarColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="masuk" msdata:ReadOnly="true" msprop:Generator_UserColumnName="masuk" msprop:Generator_ColumnPropNameInRow="masuk" msprop:Generator_ColumnVarNameInTable="columnmasuk" msprop:Generator_ColumnPropNameInTable="masukColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="akhir" msdata:ReadOnly="true" msprop:Generator_UserColumnName="akhir" msprop:Generator_ColumnPropNameInRow="akhir" msprop:Generator_ColumnVarNameInTable="columnakhir" msprop:Generator_ColumnPropNameInTable="akhirColumn" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//mstns:Table" />
+      <xs:field xpath="mstns:invh_oid" />
+    </xs:unique>
+    <xs:unique name="Constraint2">
+      <xs:selector xpath=".//mstns:Table" />
+      <xs:field xpath="mstns:en_desc" />
+    </xs:unique>
+    <xs:unique name="Constraint3" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Table" />
+      <xs:field xpath="mstns:pt_code" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

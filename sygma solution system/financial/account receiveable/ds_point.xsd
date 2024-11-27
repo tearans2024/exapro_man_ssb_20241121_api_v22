@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ds_point" targetNamespace="http://tempuri.org/ds_point.xsd" xmlns:mstns="http://tempuri.org/ds_point.xsd" xmlns="http://tempuri.org/ds_point.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="6" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="exapro_mutif_20210830ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="exapro_mutif_20210830ConnectionString (MySettings)" PropertyReference="ApplicationSettings.sygma_solution_system.My.MySettings.GlobalReference.Default.exapro_mutif_20210830ConnectionString" Provider="CoreLab.PostgreSql.Entity" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="odbc_sygma_lokal" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="odbc_sygma_lokal (MySettings)" PropertyReference="ApplicationSettings.sygma_solution_system.My.MySettings.GlobalReference.Default.odbc_sygma_lokal" Provider="System.Data.Odbc" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="exapro_mutif_20210903ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="exapro_mutif_20210903ConnectionString (MySettings)" PropertyReference="ApplicationSettings.sygma_solution_system.My.MySettings.GlobalReference.Default.exapro_mutif_20210903ConnectionString" Provider="CoreLab.PostgreSql.Entity" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="exapro_mutif_20210905ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="exapro_mutif_20210905ConnectionString (MySettings)" PropertyReference="ApplicationSettings.sygma_solution_system.My.MySettings.GlobalReference.Default.exapro_mutif_20210905ConnectionString" Provider="CoreLab.PostgreSql.Entity" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="exapro_mutif_20210906ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="exapro_mutif_20210906ConnectionString (MySettings)" PropertyReference="ApplicationSettings.sygma_solution_system.My.MySettings.GlobalReference.Default.exapro_mutif_20210906ConnectionString" Provider="CoreLab.PostgreSql.Entity" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="exapro_mutif_02052021ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="exapro_mutif_02052021ConnectionString (MySettings)" PropertyReference="ApplicationSettings.sygma_solution_system.My.MySettings.GlobalReference.Default.exapro_mutif_02052021ConnectionString" Provider="CoreLab.PostgreSql.Entity" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="exapro_mutif_20210111ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="exapro_mutif_20210111ConnectionString (MySettings)" PropertyReference="ApplicationSettings.sygma_solution_system.My.MySettings.GlobalReference.Default.exapro_mutif_20210111ConnectionString" Provider="CoreLab.PostgreSql.Entity" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="odbc_sygma_lokal (MySettings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DISTINCT dbr_mstr.dbr_code,
+       dbr_mstr.dbr_date,
+       dbr_mstr.dbr_dbgcity_id,
+       dbr_mstr.dbr_start_date,
+       dbr_mstr.dbr_end_date,
+       dbr_mstr.dbr_close_date,
+       dbr_mstr.dbr_remarks,
+       dbr_mstr.dbr_periode_id,
+       code_mstr.code_name,
+       dbg_group.dbg_name,
+       dbrd_det.dbrd_en_id,
+       dbrd_det.dbrd_en_desc,
+       dbrd_det.dbrd_ar_oid,
+       dbrd_det.dbrd_ar_eff_date,
+       dbrd_det.dbrd_ar_date,
+       dbrd_det.dbrd_ars_invoice,
+       dbrd_det.dbrd_ar_code,
+       dbrd_det.dbrd_ar_amount,
+       dbrd_det.dbrd_ret_amount,
+       dbrd_det.dbrd_ar_final,
+       dbrd_det.dbrd_ar_duedate,
+       dbrd_det.dbrd_arpayd_date,
+       dbrd_det.dbrd_apyad_amount,
+       dbrd_det.dbrd_point,
+       dbrd_det.dbrd_tot_point,
+       sls_program.sls_name,
+       psperiode_mstr.periode_code,
+       psperiode_mstr.periode_start_date,
+       psperiode_mstr.periode_end_date,
+       dbrd_det.dbrd_so_amount,
+       SUM(dbrd_det.dbrd_so_amount) AS total_so_amount,
+       SUM(dbrd_det.dbrd_ar_amount) AS total_ar_amount,
+       SUM(dbrd_det.dbrd_ret_amount) AS total_ret_amount,
+       dbrd_det.dbrd_so_point,
+       dbrd_det.dbrd_drcr_tot,
+       dbrd_det.dbrd_ar_close_date,
+       dbr_mstr.dbr_prev_point,
+       SUM(dbrd_det.dbrd_point) +  dbr_mstr.dbr_prev_point as total_point,
+       MAX(dbrd_det.dbrd_tot_point) + dbr_mstr.dbr_prev_point as total_max_point,
+       SUM(ar_mstr.ar_amount) AS piutang,
+       SUM(ar_mstr.ar_pay_amount) AS pembayaran,
+       SUM(ar_mstr.ar_amount) - SUM(ar_mstr.ar_pay_amount) AS total_hutang
+FROM dbr_mstr
+     INNER JOIN code_mstr ON code_mstr.code_id = dbr_mstr.dbr_dbgcity_id
+     INNER JOIN dbg_group ON dbg_group.dbg_oid = dbr_mstr.dbr_dbg_oid
+     INNER JOIN dbrd_det ON dbr_mstr.dbr_oid = dbrd_det.dbrd_dbr_oid
+     INNER JOIN sls_program ON sls_program.sls_id = dbr_mstr.dbr_slsprog_id
+     INNER JOIN dbgd_det ON dbgd_det.dbgd_dbg_oid = dbg_group.dbg_oid
+     INNER JOIN ar_mstr ON ar_mstr.ar_bill_to = dbgd_det.dbgd_ptnr_id
+     INNER JOIN psperiode_mstr ON psperiode_mstr.periode_id =
+       dbr_mstr.dbr_periode_id
+GROUP BY dbr_mstr.dbr_code,
+         dbr_mstr.dbr_date,
+         dbr_mstr.dbr_dbgcity_id,
+         dbr_mstr.dbr_start_date,
+         dbr_mstr.dbr_end_date,
+         dbr_mstr.dbr_close_date,
+         dbr_mstr.dbr_remarks,
+         dbr_mstr.dbr_periode_id,
+         code_mstr.code_name,
+         dbg_group.dbg_name,
+         dbrd_det.dbrd_en_id,
+         dbrd_det.dbrd_en_desc,
+         dbrd_det.dbrd_ar_oid,
+         dbrd_det.dbrd_ar_eff_date,
+         dbrd_det.dbrd_ar_date,
+         dbrd_det.dbrd_ars_invoice,
+         dbrd_det.dbrd_ar_code,
+         dbrd_det.dbrd_ar_amount,
+         dbrd_det.dbrd_ret_amount,
+         dbrd_det.dbrd_ar_final,
+         dbrd_det.dbrd_ar_duedate,
+         dbrd_det.dbrd_arpayd_date,
+         dbrd_det.dbrd_apyad_amount,
+         dbrd_det.dbrd_point,
+         dbrd_det.dbrd_tot_point,
+         sls_program.sls_name,
+         psperiode_mstr.periode_code,
+         psperiode_mstr.periode_start_date,
+         psperiode_mstr.periode_end_date,
+         dbrd_det.dbrd_so_amount,
+         dbrd_det.dbrd_so_point,
+         dbrd_det.dbrd_drcr_tot,
+         dbrd_det.dbrd_ar_close_date,
+         dbr_mstr.dbr_prev_point
+ORDER BY dbrd_det.dbrd_ar_date,
+         dbrd_det.dbrd_ar_code</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="dbr_code" DataSetColumn="dbr_code" />
+              <Mapping SourceColumn="dbg_name" DataSetColumn="dbg_name" />
+              <Mapping SourceColumn="dbr_dbgcity_id" DataSetColumn="dbr_dbgcity_id" />
+              <Mapping SourceColumn="code_name" DataSetColumn="code_name" />
+              <Mapping SourceColumn="dbr_periode_id" DataSetColumn="dbr_periode_id" />
+              <Mapping SourceColumn="dbr_start_date" DataSetColumn="dbr_start_date" />
+              <Mapping SourceColumn="dbr_end_date" DataSetColumn="dbr_end_date" />
+              <Mapping SourceColumn="dbr_remarks" DataSetColumn="dbr_remarks" />
+              <Mapping SourceColumn="dbrd_en_id" DataSetColumn="dbrd_en_id" />
+              <Mapping SourceColumn="dbrd_ar_date" DataSetColumn="dbrd_ar_date" />
+              <Mapping SourceColumn="dbrd_ar_eff_date" DataSetColumn="dbrd_ar_eff_date" />
+              <Mapping SourceColumn="dbrd_ar_code" DataSetColumn="dbrd_ar_code" />
+              <Mapping SourceColumn="dbrd_ars_invoice" DataSetColumn="dbrd_ars_invoice" />
+              <Mapping SourceColumn="dbrd_ar_amount" DataSetColumn="dbrd_ar_amount" />
+              <Mapping SourceColumn="dbrd_apyad_amount" DataSetColumn="dbrd_apyad_amount" />
+              <Mapping SourceColumn="dbrd_ar_duedate" DataSetColumn="dbrd_ar_duedate" />
+              <Mapping SourceColumn="dbrd_arpayd_date" DataSetColumn="dbrd_arpayd_date" />
+              <Mapping SourceColumn="dbrd_point" DataSetColumn="dbrd_point" />
+              <Mapping SourceColumn="dbrd_tot_point" DataSetColumn="dbrd_tot_point" />
+              <Mapping SourceColumn="dbr_date" DataSetColumn="dbr_date" />
+              <Mapping SourceColumn="dbrd_ar_oid" DataSetColumn="dbrd_ar_oid" />
+              <Mapping SourceColumn="sls_name" DataSetColumn="sls_name" />
+              <Mapping SourceColumn="periode_code" DataSetColumn="periode_code" />
+              <Mapping SourceColumn="periode_start_date" DataSetColumn="periode_start_date" />
+              <Mapping SourceColumn="periode_end_date" DataSetColumn="periode_end_date" />
+              <Mapping SourceColumn="dbrd_en_desc" DataSetColumn="dbrd_en_desc" />
+              <Mapping SourceColumn="dbrd_ar_final" DataSetColumn="dbrd_ar_final" />
+              <Mapping SourceColumn="dbrd_so_amount" DataSetColumn="dbrd_so_amount" />
+              <Mapping SourceColumn="dbrd_so_point" DataSetColumn="dbrd_so_point" />
+              <Mapping SourceColumn="dbrd_ar_close_date" DataSetColumn="dbrd_ar_close_date" />
+              <Mapping SourceColumn="dbrd_ret_amount" DataSetColumn="dbrd_ret_amount" />
+              <Mapping SourceColumn="total_so_amount" DataSetColumn="total_so_amount" />
+              <Mapping SourceColumn="total_ar_amount" DataSetColumn="total_ar_amount" />
+              <Mapping SourceColumn="total_ret_amount" DataSetColumn="total_ret_amount" />
+              <Mapping SourceColumn="dbrd_drcr_tot" DataSetColumn="dbrd_drcr_tot" />
+              <Mapping SourceColumn="dbr_close_date" DataSetColumn="dbr_close_date" />
+              <Mapping SourceColumn="dbr_prev_point" DataSetColumn="dbr_prev_point" />
+              <Mapping SourceColumn="piutang" DataSetColumn="piutang" />
+              <Mapping SourceColumn="pembayaran" DataSetColumn="pembayaran" />
+              <Mapping SourceColumn="total_hutang" DataSetColumn="total_hutang" />
+              <Mapping SourceColumn="total_point" DataSetColumn="total_point" />
+              <Mapping SourceColumn="total_max_point" DataSetColumn="total_max_point" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ds_point" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ds_point" msprop:Generator_DataSetName="ds_point" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_TablePropName="DataTable1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="dbr_code" msprop:Generator_UserColumnName="dbr_code" msprop:Generator_ColumnPropNameInRow="dbr_code" msprop:Generator_ColumnVarNameInTable="columndbr_code" msprop:Generator_ColumnPropNameInTable="dbr_codeColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dbg_name" msprop:Generator_UserColumnName="dbg_name" msprop:Generator_ColumnPropNameInRow="dbg_name" msprop:Generator_ColumnVarNameInTable="columndbg_name" msprop:Generator_ColumnPropNameInTable="dbg_nameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dbr_dbgcity_id" msprop:Generator_UserColumnName="dbr_dbgcity_id" msprop:Generator_ColumnPropNameInRow="dbr_dbgcity_id" msprop:Generator_ColumnVarNameInTable="columndbr_dbgcity_id" msprop:Generator_ColumnPropNameInTable="dbr_dbgcity_idColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="code_name" msprop:Generator_UserColumnName="code_name" msprop:Generator_ColumnPropNameInRow="code_name" msprop:Generator_ColumnVarNameInTable="columncode_name" msprop:Generator_ColumnPropNameInTable="code_nameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dbr_periode_id" msprop:Generator_UserColumnName="dbr_periode_id" msprop:Generator_ColumnPropNameInRow="dbr_periode_id" msprop:Generator_ColumnVarNameInTable="columndbr_periode_id" msprop:Generator_ColumnPropNameInTable="dbr_periode_idColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="dbr_start_date" msprop:Generator_UserColumnName="dbr_start_date" msprop:Generator_ColumnPropNameInRow="dbr_start_date" msprop:Generator_ColumnVarNameInTable="columndbr_start_date" msprop:Generator_ColumnPropNameInTable="dbr_start_dateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="dbr_end_date" msprop:Generator_UserColumnName="dbr_end_date" msprop:Generator_ColumnPropNameInRow="dbr_end_date" msprop:Generator_ColumnVarNameInTable="columndbr_end_date" msprop:Generator_ColumnPropNameInTable="dbr_end_dateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="dbr_remarks" msprop:Generator_UserColumnName="dbr_remarks" msprop:Generator_ColumnPropNameInRow="dbr_remarks" msprop:Generator_ColumnVarNameInTable="columndbr_remarks" msprop:Generator_ColumnPropNameInTable="dbr_remarksColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="90" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dbrd_en_id" msprop:Generator_UserColumnName="dbrd_en_id" msprop:Generator_ColumnPropNameInRow="dbrd_en_id" msprop:Generator_ColumnVarNameInTable="columndbrd_en_id" msprop:Generator_ColumnPropNameInTable="dbrd_en_idColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="dbrd_ar_date" msprop:Generator_UserColumnName="dbrd_ar_date" msprop:Generator_ColumnPropNameInRow="dbrd_ar_date" msprop:Generator_ColumnVarNameInTable="columndbrd_ar_date" msprop:Generator_ColumnPropNameInTable="dbrd_ar_dateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="dbrd_ar_eff_date" msprop:Generator_UserColumnName="dbrd_ar_eff_date" msprop:Generator_ColumnPropNameInRow="dbrd_ar_eff_date" msprop:Generator_ColumnVarNameInTable="columndbrd_ar_eff_date" msprop:Generator_ColumnPropNameInTable="dbrd_ar_eff_dateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="dbrd_ar_code" msprop:Generator_UserColumnName="dbrd_ar_code" msprop:Generator_ColumnPropNameInRow="dbrd_ar_code" msprop:Generator_ColumnVarNameInTable="columndbrd_ar_code" msprop:Generator_ColumnPropNameInTable="dbrd_ar_codeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dbrd_ars_invoice" msprop:Generator_UserColumnName="dbrd_ars_invoice" msprop:Generator_ColumnPropNameInRow="dbrd_ars_invoice" msprop:Generator_ColumnVarNameInTable="columndbrd_ars_invoice" msprop:Generator_ColumnPropNameInTable="dbrd_ars_invoiceColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="dbrd_ar_amount" msprop:Generator_UserColumnName="dbrd_ar_amount" msprop:Generator_ColumnPropNameInRow="dbrd_ar_amount" msprop:Generator_ColumnVarNameInTable="columndbrd_ar_amount" msprop:Generator_ColumnPropNameInTable="dbrd_ar_amountColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="dbrd_apyad_amount" msprop:Generator_UserColumnName="dbrd_apyad_amount" msprop:Generator_ColumnPropNameInRow="dbrd_apyad_amount" msprop:Generator_ColumnVarNameInTable="columndbrd_apyad_amount" msprop:Generator_ColumnPropNameInTable="dbrd_apyad_amountColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="dbrd_ar_duedate" msprop:Generator_UserColumnName="dbrd_ar_duedate" msprop:Generator_ColumnPropNameInRow="dbrd_ar_duedate" msprop:Generator_ColumnVarNameInTable="columndbrd_ar_duedate" msprop:Generator_ColumnPropNameInTable="dbrd_ar_duedateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="dbrd_arpayd_date" msprop:Generator_UserColumnName="dbrd_arpayd_date" msprop:Generator_ColumnPropNameInRow="dbrd_arpayd_date" msprop:Generator_ColumnVarNameInTable="columndbrd_arpayd_date" msprop:Generator_ColumnPropNameInTable="dbrd_arpayd_dateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="dbrd_point" msprop:Generator_UserColumnName="dbrd_point" msprop:Generator_ColumnPropNameInRow="dbrd_point" msprop:Generator_ColumnVarNameInTable="columndbrd_point" msprop:Generator_ColumnPropNameInTable="dbrd_pointColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="dbrd_tot_point" msprop:Generator_UserColumnName="dbrd_tot_point" msprop:Generator_ColumnPropNameInRow="dbrd_tot_point" msprop:Generator_ColumnVarNameInTable="columndbrd_tot_point" msprop:Generator_ColumnPropNameInTable="dbrd_tot_pointColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="dbr_date" msprop:Generator_UserColumnName="dbr_date" msprop:Generator_ColumnPropNameInRow="dbr_date" msprop:Generator_ColumnVarNameInTable="columndbr_date" msprop:Generator_ColumnPropNameInTable="dbr_dateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="dbrd_ar_oid" msprop:Generator_UserColumnName="dbrd_ar_oid" msprop:Generator_ColumnPropNameInRow="dbrd_ar_oid" msprop:Generator_ColumnVarNameInTable="columndbrd_ar_oid" msprop:Generator_ColumnPropNameInTable="dbrd_ar_oidColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="sls_name" msprop:Generator_UserColumnName="sls_name" msprop:Generator_ColumnPropNameInRow="sls_name" msprop:Generator_ColumnVarNameInTable="columnsls_name" msprop:Generator_ColumnPropNameInTable="sls_nameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="145" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="periode_code" msprop:Generator_UserColumnName="periode_code" msprop:Generator_ColumnPropNameInRow="periode_code" msprop:Generator_ColumnVarNameInTable="columnperiode_code" msprop:Generator_ColumnPropNameInTable="periode_codeColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="periode_start_date" msprop:Generator_UserColumnName="periode_start_date" msprop:Generator_ColumnPropNameInRow="periode_start_date" msprop:Generator_ColumnVarNameInTable="columnperiode_start_date" msprop:Generator_ColumnPropNameInTable="periode_start_dateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="periode_end_date" msprop:Generator_UserColumnName="periode_end_date" msprop:Generator_ColumnPropNameInRow="periode_end_date" msprop:Generator_ColumnVarNameInTable="columnperiode_end_date" msprop:Generator_ColumnPropNameInTable="periode_end_dateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="dbrd_en_desc" msprop:Generator_UserColumnName="dbrd_en_desc" msprop:Generator_ColumnVarNameInTable="columndbrd_en_desc" msprop:Generator_ColumnPropNameInRow="dbrd_en_desc" msprop:Generator_ColumnPropNameInTable="dbrd_en_descColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dbrd_ar_final" msprop:Generator_UserColumnName="dbrd_ar_final" msprop:Generator_ColumnVarNameInTable="columndbrd_ar_final" msprop:Generator_ColumnPropNameInRow="dbrd_ar_final" msprop:Generator_ColumnPropNameInTable="dbrd_ar_finalColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="dbrd_so_amount" msprop:Generator_UserColumnName="dbrd_so_amount" msprop:Generator_ColumnPropNameInRow="dbrd_so_amount" msprop:Generator_ColumnVarNameInTable="columndbrd_so_amount" msprop:Generator_ColumnPropNameInTable="dbrd_so_amountColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="dbrd_so_point" msprop:Generator_UserColumnName="dbrd_so_point" msprop:Generator_ColumnPropNameInRow="dbrd_so_point" msprop:Generator_ColumnVarNameInTable="columndbrd_so_point" msprop:Generator_ColumnPropNameInTable="dbrd_so_pointColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="dbrd_ar_close_date" msprop:Generator_UserColumnName="dbrd_ar_close_date" msprop:Generator_ColumnPropNameInRow="dbrd_ar_close_date" msprop:Generator_ColumnVarNameInTable="columndbrd_ar_close_date" msprop:Generator_ColumnPropNameInTable="dbrd_ar_close_dateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="dbrd_ret_amount" msprop:Generator_UserColumnName="dbrd_ret_amount" msprop:Generator_ColumnVarNameInTable="columndbrd_ret_amount" msprop:Generator_ColumnPropNameInRow="dbrd_ret_amount" msprop:Generator_ColumnPropNameInTable="dbrd_ret_amountColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="total_so_amount" msdata:ReadOnly="true" msprop:Generator_UserColumnName="total_so_amount" msprop:Generator_ColumnVarNameInTable="columntotal_so_amount" msprop:Generator_ColumnPropNameInRow="total_so_amount" msprop:Generator_ColumnPropNameInTable="total_so_amountColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="total_ar_amount" msdata:ReadOnly="true" msprop:Generator_UserColumnName="total_ar_amount" msprop:Generator_ColumnVarNameInTable="columntotal_ar_amount" msprop:Generator_ColumnPropNameInRow="total_ar_amount" msprop:Generator_ColumnPropNameInTable="total_ar_amountColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="total_ret_amount" msdata:ReadOnly="true" msprop:Generator_UserColumnName="total_ret_amount" msprop:Generator_ColumnVarNameInTable="columntotal_ret_amount" msprop:Generator_ColumnPropNameInRow="total_ret_amount" msprop:Generator_ColumnPropNameInTable="total_ret_amountColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="dbrd_drcr_tot" msprop:Generator_UserColumnName="dbrd_drcr_tot" msprop:Generator_ColumnVarNameInTable="columndbrd_drcr_tot" msprop:Generator_ColumnPropNameInRow="dbrd_drcr_tot" msprop:Generator_ColumnPropNameInTable="dbrd_drcr_totColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="dbr_close_date" msprop:Generator_UserColumnName="dbr_close_date" msprop:Generator_ColumnPropNameInRow="dbr_close_date" msprop:Generator_ColumnVarNameInTable="columndbr_close_date" msprop:Generator_ColumnPropNameInTable="dbr_close_dateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="dbr_prev_point" msprop:Generator_UserColumnName="dbr_prev_point" msprop:Generator_ColumnVarNameInTable="columndbr_prev_point" msprop:Generator_ColumnPropNameInRow="dbr_prev_point" msprop:Generator_ColumnPropNameInTable="dbr_prev_pointColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="piutang" msdata:ReadOnly="true" msprop:Generator_UserColumnName="piutang" msprop:Generator_ColumnVarNameInTable="columnpiutang" msprop:Generator_ColumnPropNameInRow="piutang" msprop:Generator_ColumnPropNameInTable="piutangColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="pembayaran" msdata:ReadOnly="true" msprop:Generator_UserColumnName="pembayaran" msprop:Generator_ColumnVarNameInTable="columnpembayaran" msprop:Generator_ColumnPropNameInRow="pembayaran" msprop:Generator_ColumnPropNameInTable="pembayaranColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="total_hutang" msdata:ReadOnly="true" msprop:Generator_UserColumnName="total_hutang" msprop:Generator_ColumnVarNameInTable="columntotal_hutang" msprop:Generator_ColumnPropNameInRow="total_hutang" msprop:Generator_ColumnPropNameInTable="total_hutangColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="total_point" msdata:ReadOnly="true" msprop:Generator_UserColumnName="total_point" msprop:Generator_ColumnVarNameInTable="columntotal_point" msprop:Generator_ColumnPropNameInRow="total_point" msprop:Generator_ColumnPropNameInTable="total_pointColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DataColumn1" msprop:Generator_UserColumnName="DataColumn1" msprop:Generator_ColumnPropNameInRow="DataColumn1" msprop:Generator_ColumnVarNameInTable="columnDataColumn1" msprop:Generator_ColumnPropNameInTable="DataColumn1Column" type="xs:string" minOccurs="0" />
+              <xs:element name="total_max_point" msdata:ReadOnly="true" msprop:Generator_UserColumnName="total_max_point" msprop:Generator_ColumnPropNameInRow="total_max_point" msprop:Generator_ColumnVarNameInTable="columntotal_max_point" msprop:Generator_ColumnPropNameInTable="total_max_pointColumn" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint2">
+      <xs:selector xpath=".//mstns:DataTable1" />
+      <xs:field xpath="mstns:dbr_code" />
+    </xs:unique>
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//mstns:DataTable1" />
+      <xs:field xpath="mstns:periode_code" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

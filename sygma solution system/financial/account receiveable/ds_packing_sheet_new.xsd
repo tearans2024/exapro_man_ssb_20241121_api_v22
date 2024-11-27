@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ds_packing_sheet_new" targetNamespace="http://tempuri.org/ds_packing_sheet_new.xsd" xmlns:mstns="http://tempuri.org/ds_packing_sheet_new.xsd" xmlns="http://tempuri.org/ds_packing_sheet_new.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="exapro_mutif_20210812ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="exapro_mutif_20210812ConnectionString (MySettings)" PropertyReference="ApplicationSettings.sygma_solution_system.My.MySettings.GlobalReference.Default.exapro_mutif_20210812ConnectionString" Provider="CoreLab.PostgreSql.Entity" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="odbc_sygma_lokal" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="odbc_sygma_lokal (MySettings)" PropertyReference="ApplicationSettings.sygma_solution_system.My.MySettings.GlobalReference.Default.odbc_sygma_lokal" Provider="System.Data.Odbc" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="odbc_sygma_lokal (MySettings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        sod_det.sod_pt_id, pcs_mstr.pcs_code, pcs_mstr.pcs_date, pcs_mstr.pcs_bill_to, ptnr_mstr.ptnr_name, ptnra_addr.ptnra_line, ptnra_addr.ptnra_line_1, ptnra_addr.ptnra_line_2, ptnra_addr.ptnra_line_3, ptnra_addr.ptnra_zip, 
+                         ptnra_addr.ptnra_phone_1, ptnra_addr.ptnra_phone_2, pt_mstr.pt_code, pt_mstr.pt_desc1, pt_mstr.pt_desc2, COUNT(sod_det.sod_pt_id) AS jumlah, coalesce(sod_det.sod_qty_shipment) AS shipment, 
+                         coalesce(sod_det.sod_qty_invoice) AS qty_open, COUNT(sod_det.sod_pt_id) * coalesce(sod_det.sod_qty_shipment) AS total, COUNT(sod_det.sod_pt_id) * coalesce(sod_det.sod_qty_invoice) AS invoiced, sod_det.sod_um, 
+                         pcss_ship.pcss_collie_number, SUM(pcss_ship.pcss_collie_number) AS collie, cmaddr_mstr.cmaddr_name, cmaddr_mstr.cmaddr_line_1, cmaddr_mstr.cmaddr_line_2, cmaddr_mstr.cmaddr_line_3, 
+                         cmaddr_mstr.cmaddr_phone_1, cmaddr_mstr.cmaddr_phone_2, shipment AS EXPR1, qty_open AS EXPR2
+FROM            pcss_ship INNER JOIN
+                         pcs_mstr ON pcs_mstr.pcs_oid = pcss_ship.pcss_pcs_oid INNER JOIN
+                         soshipd_det ON soshipd_det.soshipd_oid = pcss_ship.pcss_soshipd_oid INNER JOIN
+                         sod_det ON sod_det.sod_oid = soshipd_det.soshipd_sod_oid INNER JOIN
+                         en_mstr ON en_mstr.en_id = pcs_mstr.pcs_en_id INNER JOIN
+                         ptnr_mstr ON ptnr_mstr.ptnr_id = pcs_mstr.pcs_bill_to INNER JOIN
+                         ptnra_addr ON ptnra_addr.ptnra_ptnr_oid = ptnr_mstr.ptnr_oid INNER JOIN
+                         pt_mstr ON pt_mstr.pt_id = sod_det.sod_pt_id INNER JOIN
+                         cmaddr_mstr ON cmaddr_mstr.cmaddr_en_id = pcs_mstr.pcs_en_id
+GROUP BY sod_det.sod_pt_id, pcs_mstr.pcs_code, pcs_mstr.pcs_date, pcs_mstr.pcs_bill_to, ptnr_mstr.ptnr_name, ptnra_addr.ptnra_line, ptnra_addr.ptnra_line_1, ptnra_addr.ptnra_line_2, ptnra_addr.ptnra_line_3, ptnra_addr.ptnra_zip, 
+                         ptnra_addr.ptnra_phone_1, ptnra_addr.ptnra_phone_2, shipment, qty_open, pt_mstr.pt_code, pt_mstr.pt_desc1, pt_mstr.pt_desc2, sod_det.sod_um, pcss_ship.pcss_collie_number, cmaddr_mstr.cmaddr_name, 
+                         cmaddr_mstr.cmaddr_line_1, cmaddr_mstr.cmaddr_line_2, cmaddr_mstr.cmaddr_line_3, cmaddr_mstr.cmaddr_phone_1, cmaddr_mstr.cmaddr_phone_2</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="sod_pt_id" DataSetColumn="sod_pt_id" />
+              <Mapping SourceColumn="pcs_code" DataSetColumn="pcs_code" />
+              <Mapping SourceColumn="pcs_date" DataSetColumn="pcs_date" />
+              <Mapping SourceColumn="pcs_bill_to" DataSetColumn="pcs_bill_to" />
+              <Mapping SourceColumn="ptnr_name" DataSetColumn="ptnr_name" />
+              <Mapping SourceColumn="ptnra_line" DataSetColumn="ptnra_line" />
+              <Mapping SourceColumn="ptnra_line_1" DataSetColumn="ptnra_line_1" />
+              <Mapping SourceColumn="ptnra_line_2" DataSetColumn="ptnra_line_2" />
+              <Mapping SourceColumn="ptnra_line_3" DataSetColumn="ptnra_line_3" />
+              <Mapping SourceColumn="ptnra_zip" DataSetColumn="ptnra_zip" />
+              <Mapping SourceColumn="ptnra_phone_1" DataSetColumn="ptnra_phone_1" />
+              <Mapping SourceColumn="ptnra_phone_2" DataSetColumn="ptnra_phone_2" />
+              <Mapping SourceColumn="pt_code" DataSetColumn="pt_code" />
+              <Mapping SourceColumn="pt_desc1" DataSetColumn="pt_desc1" />
+              <Mapping SourceColumn="pt_desc2" DataSetColumn="pt_desc2" />
+              <Mapping SourceColumn="jumlah" DataSetColumn="jumlah" />
+              <Mapping SourceColumn="shipment" DataSetColumn="shipment" />
+              <Mapping SourceColumn="qty_open" DataSetColumn="qty_open" />
+              <Mapping SourceColumn="total" DataSetColumn="total" />
+              <Mapping SourceColumn="invoiced" DataSetColumn="invoiced" />
+              <Mapping SourceColumn="sod_um" DataSetColumn="sod_um" />
+              <Mapping SourceColumn="pcss_collie_number" DataSetColumn="pcss_collie_number" />
+              <Mapping SourceColumn="collie" DataSetColumn="collie" />
+              <Mapping SourceColumn="cmaddr_name" DataSetColumn="cmaddr_name" />
+              <Mapping SourceColumn="cmaddr_line_1" DataSetColumn="cmaddr_line_1" />
+              <Mapping SourceColumn="cmaddr_line_2" DataSetColumn="cmaddr_line_2" />
+              <Mapping SourceColumn="cmaddr_line_3" DataSetColumn="cmaddr_line_3" />
+              <Mapping SourceColumn="cmaddr_phone_1" DataSetColumn="cmaddr_phone_1" />
+              <Mapping SourceColumn="cmaddr_phone_2" DataSetColumn="cmaddr_phone_2" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ds_packing_sheet_new" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="ds_packing_sheet_new" msprop:Generator_UserDSName="ds_packing_sheet_new" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_TablePropName="DataTable1" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="sod_pt_id" msprop:Generator_UserColumnName="sod_pt_id" msprop:Generator_ColumnPropNameInRow="sod_pt_id" msprop:Generator_ColumnVarNameInTable="columnsod_pt_id" msprop:Generator_ColumnPropNameInTable="sod_pt_idColumn" type="xs:long" minOccurs="0" />
+              <xs:element name="pcs_code" msprop:Generator_UserColumnName="pcs_code" msprop:Generator_ColumnPropNameInRow="pcs_code" msprop:Generator_ColumnVarNameInTable="columnpcs_code" msprop:Generator_ColumnPropNameInTable="pcs_codeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="pcs_date" msprop:Generator_UserColumnName="pcs_date" msprop:Generator_ColumnPropNameInRow="pcs_date" msprop:Generator_ColumnVarNameInTable="columnpcs_date" msprop:Generator_ColumnPropNameInTable="pcs_dateColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="pcs_bill_to" msprop:Generator_UserColumnName="pcs_bill_to" msprop:Generator_ColumnPropNameInRow="pcs_bill_to" msprop:Generator_ColumnVarNameInTable="columnpcs_bill_to" msprop:Generator_ColumnPropNameInTable="pcs_bill_toColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ptnr_name" msprop:Generator_UserColumnName="ptnr_name" msprop:Generator_ColumnPropNameInRow="ptnr_name" msprop:Generator_ColumnVarNameInTable="columnptnr_name" msprop:Generator_ColumnPropNameInTable="ptnr_nameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ptnra_line" msprop:Generator_UserColumnName="ptnra_line" msprop:Generator_ColumnPropNameInRow="ptnra_line" msprop:Generator_ColumnVarNameInTable="columnptnra_line" msprop:Generator_ColumnPropNameInTable="ptnra_lineColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ptnra_line_1" msprop:Generator_UserColumnName="ptnra_line_1" msprop:Generator_ColumnPropNameInRow="ptnra_line_1" msprop:Generator_ColumnVarNameInTable="columnptnra_line_1" msprop:Generator_ColumnPropNameInTable="ptnra_line_1Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="300" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ptnra_line_2" msprop:Generator_UserColumnName="ptnra_line_2" msprop:Generator_ColumnPropNameInRow="ptnra_line_2" msprop:Generator_ColumnVarNameInTable="columnptnra_line_2" msprop:Generator_ColumnPropNameInTable="ptnra_line_2Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ptnra_line_3" msprop:Generator_UserColumnName="ptnra_line_3" msprop:Generator_ColumnPropNameInRow="ptnra_line_3" msprop:Generator_ColumnVarNameInTable="columnptnra_line_3" msprop:Generator_ColumnPropNameInTable="ptnra_line_3Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ptnra_zip" msprop:Generator_UserColumnName="ptnra_zip" msprop:Generator_ColumnPropNameInRow="ptnra_zip" msprop:Generator_ColumnVarNameInTable="columnptnra_zip" msprop:Generator_ColumnPropNameInTable="ptnra_zipColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ptnra_phone_1" msprop:Generator_UserColumnName="ptnra_phone_1" msprop:Generator_ColumnPropNameInRow="ptnra_phone_1" msprop:Generator_ColumnVarNameInTable="columnptnra_phone_1" msprop:Generator_ColumnPropNameInTable="ptnra_phone_1Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ptnra_phone_2" msprop:Generator_UserColumnName="ptnra_phone_2" msprop:Generator_ColumnPropNameInRow="ptnra_phone_2" msprop:Generator_ColumnVarNameInTable="columnptnra_phone_2" msprop:Generator_ColumnPropNameInTable="ptnra_phone_2Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="pt_code" msprop:Generator_UserColumnName="pt_code" msprop:Generator_ColumnPropNameInRow="pt_code" msprop:Generator_ColumnVarNameInTable="columnpt_code" msprop:Generator_ColumnPropNameInTable="pt_codeColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="pt_desc1" msprop:Generator_UserColumnName="pt_desc1" msprop:Generator_ColumnPropNameInRow="pt_desc1" msprop:Generator_ColumnVarNameInTable="columnpt_desc1" msprop:Generator_ColumnPropNameInTable="pt_desc1Column" type="xs:string" minOccurs="0" />
+              <xs:element name="pt_desc2" msprop:Generator_UserColumnName="pt_desc2" msprop:Generator_ColumnPropNameInRow="pt_desc2" msprop:Generator_ColumnVarNameInTable="columnpt_desc2" msprop:Generator_ColumnPropNameInTable="pt_desc2Column" type="xs:string" minOccurs="0" />
+              <xs:element name="jumlah" msdata:ReadOnly="true" msprop:Generator_UserColumnName="jumlah" msprop:Generator_ColumnPropNameInRow="jumlah" msprop:Generator_ColumnVarNameInTable="columnjumlah" msprop:Generator_ColumnPropNameInTable="jumlahColumn" type="xs:long" minOccurs="0" />
+              <xs:element name="shipment" msdata:ReadOnly="true" msprop:Generator_UserColumnName="shipment" msprop:Generator_ColumnPropNameInRow="shipment" msprop:Generator_ColumnVarNameInTable="columnshipment" msprop:Generator_ColumnPropNameInTable="shipmentColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="qty_open" msdata:ReadOnly="true" msprop:Generator_UserColumnName="qty_open" msprop:Generator_ColumnPropNameInRow="qty_open" msprop:Generator_ColumnVarNameInTable="columnqty_open" msprop:Generator_ColumnPropNameInTable="qty_openColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="total" msdata:ReadOnly="true" msprop:Generator_UserColumnName="total" msprop:Generator_ColumnPropNameInRow="total" msprop:Generator_ColumnVarNameInTable="columntotal" msprop:Generator_ColumnPropNameInTable="totalColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="invoiced" msdata:ReadOnly="true" msprop:Generator_UserColumnName="invoiced" msprop:Generator_ColumnPropNameInRow="invoiced" msprop:Generator_ColumnVarNameInTable="columninvoiced" msprop:Generator_ColumnPropNameInTable="invoicedColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="sod_um" msprop:Generator_UserColumnName="sod_um" msprop:Generator_ColumnPropNameInRow="sod_um" msprop:Generator_ColumnVarNameInTable="columnsod_um" msprop:Generator_ColumnPropNameInTable="sod_umColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="pcss_collie_number" msprop:Generator_UserColumnName="pcss_collie_number" msprop:Generator_ColumnPropNameInRow="pcss_collie_number" msprop:Generator_ColumnVarNameInTable="columnpcss_collie_number" msprop:Generator_ColumnPropNameInTable="pcss_collie_numberColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="collie" msdata:ReadOnly="true" msprop:Generator_UserColumnName="collie" msprop:Generator_ColumnPropNameInRow="collie" msprop:Generator_ColumnVarNameInTable="columncollie" msprop:Generator_ColumnPropNameInTable="collieColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="cmaddr_name" msprop:Generator_UserColumnName="cmaddr_name" msprop:Generator_ColumnPropNameInRow="cmaddr_name" msprop:Generator_ColumnVarNameInTable="columncmaddr_name" msprop:Generator_ColumnPropNameInTable="cmaddr_nameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cmaddr_line_1" msprop:Generator_UserColumnName="cmaddr_line_1" msprop:Generator_ColumnPropNameInRow="cmaddr_line_1" msprop:Generator_ColumnVarNameInTable="columncmaddr_line_1" msprop:Generator_ColumnPropNameInTable="cmaddr_line_1Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cmaddr_line_2" msprop:Generator_UserColumnName="cmaddr_line_2" msprop:Generator_ColumnPropNameInRow="cmaddr_line_2" msprop:Generator_ColumnVarNameInTable="columncmaddr_line_2" msprop:Generator_ColumnPropNameInTable="cmaddr_line_2Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cmaddr_line_3" msprop:Generator_UserColumnName="cmaddr_line_3" msprop:Generator_ColumnPropNameInRow="cmaddr_line_3" msprop:Generator_ColumnVarNameInTable="columncmaddr_line_3" msprop:Generator_ColumnPropNameInTable="cmaddr_line_3Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="75" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cmaddr_phone_1" msprop:Generator_UserColumnName="cmaddr_phone_1" msprop:Generator_ColumnPropNameInRow="cmaddr_phone_1" msprop:Generator_ColumnVarNameInTable="columncmaddr_phone_1" msprop:Generator_ColumnPropNameInTable="cmaddr_phone_1Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="cmaddr_phone_2" msprop:Generator_UserColumnName="cmaddr_phone_2" msprop:Generator_ColumnPropNameInRow="cmaddr_phone_2" msprop:Generator_ColumnVarNameInTable="columncmaddr_phone_2" msprop:Generator_ColumnPropNameInTable="cmaddr_phone_2Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
